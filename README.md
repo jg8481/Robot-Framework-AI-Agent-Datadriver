@@ -23,9 +23,10 @@ There are two primary options for using this project. [Both have their strengths
 
 Years ago, I created another AI project called [robotframework-test-assistant](https://github.com/jg8481/leon/tree/develop/packages/robotframework-test-assistant) that focused mostly on software test activities. I consider this to be its successor and plan to expand this toolkit into the following areas that can assist in other types of activities (some may be useful to testers):
 
-- An AI agent assistant that can research any topic.
-- An AI agent assistant that can analyze a given text-based dataset using Retrieval Augmented Generation (RAG).
+- (April 29, 2024 - **Ready To Use**) An AI agent assistant that can research any topic.
+- (April 29, 2024 - **Ready To Use**) An AI agent assistant that can analyze a given text-based dataset using Retrieval Augmented Generation (RAG).
     - *Examples:* Source code, logs, reports, e-books, PDFs, etc.
+    - For now, only the Docker AI agent examples in this toolkit can do this.
 - An AI agent assistant that can audit any given source code repo for vulnerabilities.
 - An AI agent assistant that will utilize relevant and secure MCP Servers from the [4,000+ projects in the Model Context Protocol (MCP) ecosystem](https://www.pulsemcp.com/servers).
 - I have more ideas that I will be working on in the future.
