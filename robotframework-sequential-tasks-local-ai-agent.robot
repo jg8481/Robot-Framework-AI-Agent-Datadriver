@@ -13,7 +13,7 @@ ${LLM_TIME_CONSTRAINT}    240    ## This is in seconds
 
 *** Tasks ***
 
-SEQUENTIAL RPA AI-AGENT5 TASKS : Run datadriven AI-Agent tasks with this data -> prompt_message = ${GOOSE_AI_PROMPT}, local_agent_report_number  = ${REPORT_NUMBER}
+SEQUENTIAL RPA AI-AGENT TASKS : Run datadriven AI-Agent tasks with this data -> prompt_message = ${GOOSE_AI_PROMPT}, local_agent_report_number  = ${REPORT_NUMBER}
 
 *** Keywords ***
 

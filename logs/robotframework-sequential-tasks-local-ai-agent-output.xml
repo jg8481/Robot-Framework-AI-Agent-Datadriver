@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot generator="Robot 7.2.2 (Python 3.12.10 on darwin)" generated="2025-04-29T09:18:27.434946" rpa="true" schemaversion="5">
 <suite id="s1" name="Robotframework-Sequential-Tasks-Local-Ai-Agent" source="/Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/robotframework-sequential-tasks-local-ai-agent.robot">
-<test id="s1-t1" name="SEQUENTIAL RPA AI-AGENT5 TASKS : Run datadriven AI-Agent tasks with this data -&gt; prompt_message = 'Who was Edgar Allen Poe?', local_agent_report_number  = 1" line="16">
+<test id="s1-t1" name="SEQUENTIAL RPA AI-AGENT TASKS : Run datadriven AI-Agent tasks with this data -&gt; prompt_message = 'Who was Edgar Allen Poe?', local_agent_report_number  = 1" line="16">
 <kw name="Run Tasks From Local Goose AI Agent">
 <kw name="Get Current Date" owner="DateTime">
 <msg time="2025-04-29T09:18:27.475134" level="INFO">${TIMESTAMP} = 2025_04_29_09-18-27-475093</msg>
@@ -217,7 +217,7 @@
 <tag>Questions</tag>
 <status status="PASS" start="2025-04-29T09:18:27.474218" elapsed="65.903420"/>
 </test>
-<test id="s1-t2" name="SEQUENTIAL RPA AI-AGENT5 TASKS : Run datadriven AI-Agent tasks with this data -&gt; prompt_message = 'Can you give me a detailed explanation of how functional programming works and why it is useful?', local_agent_report_number  = 2" line="16">
+<test id="s1-t2" name="SEQUENTIAL RPA AI-AGENT TASKS : Run datadriven AI-Agent tasks with this data -&gt; prompt_message = 'Can you give me a detailed explanation of how functional programming works and why it is useful?', local_agent_report_number  = 2" line="16">
 <kw name="Run Tasks From Local Goose AI Agent">
 <kw name="Get Current Date" owner="DateTime">
 <msg time="2025-04-29T09:19:33.379129" level="INFO">${TIMESTAMP} = 2025_04_29_09-19-33-379058</msg>
@@ -503,7 +503,7 @@
 <tag>Questions</tag>
 <status status="PASS" start="2025-04-29T09:19:33.377841" elapsed="62.127851"/>
 </test>
-<test id="s1-t3" name="SEQUENTIAL RPA AI-AGENT5 TASKS : Run datadriven AI-Agent tasks with this data -&gt; prompt_message = 'What is the OWASP top 10?/n How do I use that knowledge to help my team at my job?/n Where can I find more information on web application security other than OWASP?', local_agent_report_number  = 3" line="16">
+<test id="s1-t3" name="SEQUENTIAL RPA AI-AGENT TASKS : Run datadriven AI-Agent tasks with this data -&gt; prompt_message = 'What is the OWASP top 10?/n How do I use that knowledge to help my team at my job?/n Where can I find more information on web application security other than OWASP?', local_agent_report_number  = 3" line="16">
 <kw name="Run Tasks From Local Goose AI Agent">
 <kw name="Get Current Date" owner="DateTime">
 <msg time="2025-04-29T09:20:35.507280" level="INFO">${TIMESTAMP} = 2025_04_29_09-20-35-507200</msg>
@@ -765,7 +765,7 @@
 <tag>Research</tag>
 <status status="PASS" start="2025-04-29T09:20:35.505884" elapsed="55.838710"/>
 </test>
-<test id="s1-t4" name="SEQUENTIAL RPA AI-AGENT5 TASKS : Run datadriven AI-Agent tasks with this data -&gt; prompt_message = multi-step-instructions3.md, local_agent_report_number  = 4" line="16">
+<test id="s1-t4" name="SEQUENTIAL RPA AI-AGENT TASKS : Run datadriven AI-Agent tasks with this data -&gt; prompt_message = multi-step-instructions3.md, local_agent_report_number  = 4" line="16">
 <kw name="Run Tasks From Local Goose AI Agent">
 <kw name="Get Current Date" owner="DateTime">
 <msg time="2025-04-29T09:21:31.345593" level="INFO">${TIMESTAMP} = 2025_04_29_09-21-31-345531</msg>
