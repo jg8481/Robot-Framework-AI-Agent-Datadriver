@@ -26,8 +26,9 @@ Years ago, I created another AI project called [robotframework-test-assistant](h
 - (April 29, 2024 - **Ready To Use**) An AI agent assistant that can research any topic.
 - (April 29, 2024 - **Ready To Use**) An AI agent assistant that can analyze a given text-based dataset using Retrieval Augmented Generation (RAG).
     - *Examples:* Source code, logs, reports, e-books, PDFs, etc.
-    - For now, only the Docker AI agent examples in this toolkit can do this.
+    - For now, only the [Docker AI agent examples](https://github.com/jg8481/Robot-Framework-AI-Agent-Datadriver/blob/main/agent-instructions/docker-agent1-distributed-instructions.csv) in this toolkit can do this.
 - An AI agent assistant that can audit any given source code repo for vulnerabilities.
+    - For now, this partially works only in the [Docker AI agent examples.](https://github.com/jg8481/Robot-Framework-AI-Agent-Datadriver/blob/main/agent-instructions/docker-agent1-distributed-instructions.csv) I am working on a version that will use Ollama.
 - An AI agent assistant that will utilize relevant and secure MCP Servers from the [4,000+ projects in the Model Context Protocol (MCP) ecosystem](https://www.pulsemcp.com/servers).
 - I have more ideas that I will be working on in the future.
 
