@@ -1,0 +1,5 @@
+${GOOSE_AI_PROMPT},${INSTRUCTION_TYPE},${REPORT_NUMBER},[Tags]
+'Who was Edgar Allen Poe?',User_Prompt,1,Questions
+'Can you give me a detailed explanation of how functional programming works and why it is useful?',User_Prompt,2,Questions
+'What is the OWASP top 10?/n How do I use that knowledge to help my team at my job?/n Where can I find more information on web application security other than OWASP?',User_Prompt,3,Research
+multi-step-instructions3.md,Markdown_File,4,Research

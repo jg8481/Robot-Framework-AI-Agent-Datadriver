@@ -1,0 +1,14 @@
+*.pyc
+.pabotsuitenames
+venv
+.env
+local.env
+testlog*.txt
+/_pycache_
+_pycache_
+*_pycache_
+nohup.*
+*.DS_Store
+artifacts
+cache
+node_modules

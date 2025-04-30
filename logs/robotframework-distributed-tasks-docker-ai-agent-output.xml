@@ -1,0 +1,1660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Rebot 7.2.2 (Python 3.12.10 on darwin)" generated="2025-04-27T15:36:48.658779" rpa="true" schemaversion="5">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="Robotframework-Distributed-Tasks-Docker-Ai-Agent1" source="/Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/robotframework-distributed-tasks-docker-ai-agent1.robot">
+<test id="s1-s1-t1" name="DISTRIBUTED RPA AI-AGENT1 TASKS : Run datadriven AI-Agent tasks with this data -&gt; container_name = docker-goose-cli-1, prompt_message = What are you?, agent1_report_number = 1" line="12">
+<kw name="Run Tasks From Goose AI Agent">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-27T15:33:16.805931" level="INFO">${TIMESTAMP} = 2025_04_27_15-33-16-805888</msg>
+<var>${TIMESTAMP}</var>
+<arg>result_format=%Y_%m_%d_%H-%M-%S-%f</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-27T15:33:16.805808" elapsed="0.000142"/>
+</kw>
+<kw name="Wait Until Docker Goose AI Prompt Succeeds" owner="generic-resources">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:33:20.807644" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:33:16.806567" elapsed="4.001332"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:33:42.985826" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193320.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:33:20.808161" elapsed="22.177783"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:33:42.986835" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193320.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:33:42.986326" elapsed="0.000778">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193320.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:33:42.987244" elapsed="0.000045"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:33:42.987369" elapsed="0.000041"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:33:42.987479" elapsed="0.000039"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:33:42.987594" elapsed="0.000036"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:33:42.987706" elapsed="0.000025"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:33:42.987832" elapsed="0.000032"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:33:16.806414" elapsed="26.181595">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193320.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:33:47.241019" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:33:43.239261" elapsed="4.001885"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:34:09.423850" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193347.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:33:47.241335" elapsed="22.182647"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:34:09.427491" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193347.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:34:09.424355" elapsed="0.003257">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193347.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:09.427735" elapsed="0.000048"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:09.427860" elapsed="0.000042"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:09.427970" elapsed="0.000032"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:09.428874" elapsed="0.000059"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:09.429019" elapsed="0.000038"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:09.429169" elapsed="0.000034"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:33:43.238592" elapsed="26.190762">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193347.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:34:13.683362" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:34:09.681902" elapsed="4.001587"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:34:36.071099" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193413.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:34:13.683676" elapsed="22.387556"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:34:36.072528" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193413.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:34:36.071740" elapsed="0.000896">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193413.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:36.072774" elapsed="0.000053"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:36.072908" elapsed="0.000029"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:36.073004" elapsed="0.000023"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:36.073110" elapsed="0.000038"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:36.073224" elapsed="0.000036"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:36.073356" elapsed="0.000030"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:34:09.680801" elapsed="26.392738">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193413.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:34:40.328342" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:34:36.326974" elapsed="4.001493"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:35:02.186707" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193440.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:34:40.328659" elapsed="21.858253"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:35:02.187948" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193440.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:35:02.187411" elapsed="0.000649">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193440.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:02.188203" elapsed="0.000050"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:02.188341" elapsed="0.000032"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:02.189011" elapsed="0.000093"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:02.189272" elapsed="0.000054"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:02.189483" elapsed="0.000046"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:02.189693" elapsed="0.000046"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:34:36.325444" elapsed="25.864512">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193440.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:35:06.444055" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:35:02.442867" elapsed="4.001335"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:35:28.584832" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193506.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:35:06.444476" elapsed="22.140516"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:35:28.586228" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193506.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:35:28.585532" elapsed="0.000863">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193506.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:28.586614" elapsed="0.000070"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:28.586828" elapsed="0.000047"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:28.586998" elapsed="0.000051"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:28.587184" elapsed="0.000046"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:28.587367" elapsed="0.000046"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:28.587583" elapsed="0.000046"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:35:02.441506" elapsed="26.146341">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193506.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:35:32.841728" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:35:28.840120" elapsed="4.001921"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:35:54.820570" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193532.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:35:32.842439" elapsed="21.978336"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:35:54.822409" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193532.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:35:54.821435" elapsed="0.001149">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193532.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:54.823511" elapsed="0.000138"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:54.823767" elapsed="0.000048"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:54.823900" elapsed="0.000040"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:54.824030" elapsed="0.000029"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:54.824140" elapsed="0.000024"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:54.824293" elapsed="0.000042"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:35:28.839013" elapsed="25.985523">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193532.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:35:59.078874" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:35:55.077657" elapsed="4.001361"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:36:21.076950" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193559.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:35:59.079220" elapsed="21.997860"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:36:21.078011" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193559.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:36:21.077468" elapsed="0.000667">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193559.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:21.078274" elapsed="0.000050"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:21.078410" elapsed="0.000029"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:21.078509" elapsed="0.000025"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:21.078610" elapsed="0.000028"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:21.078712" elapsed="0.000026"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:21.078835" elapsed="0.000026"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:35:55.076477" elapsed="26.002521">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193559.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:36:25.336303" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:36:21.334098" elapsed="4.002599"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:36:47.454647" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:36:25.337281" elapsed="22.117521"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:36:47.455832" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:36:47.455272" elapsed="0.000677">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:47.457114" elapsed="0.000058"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:47.457271" elapsed="0.000033"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:47.457386" elapsed="0.000030"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:47.457499" elapsed="0.000031"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:47.457620" elapsed="0.000037"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:47.457775" elapsed="0.000031"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:36:21.332857" elapsed="26.125101">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<msg time="2025-04-27T15:36:47.458121" level="FAIL">Keyword 'Run Docker Goose AI Prompt And Check Output' failed after retrying 8 times. The last error was: 'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${RETRY} times</arg>
+<arg>0.25 seconds</arg>
+<arg>Run Docker Goose AI Prompt And Check Output</arg>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="FAIL" start="2025-04-27T15:33:16.806187" elapsed="210.652090">Keyword 'Run Docker Goose AI Prompt And Check Output' failed after retrying 8 times. The last error was: 'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT} write a detailed summary of that work in an agent1-report${REPORT_NUMBER}-${TIMESTAMP}.md file and ${GOOSE_AI_DOCKER_OUTPUT_COLLECTOR}</arg>
+<arg>npx -y @modelcontextprotocol/server-memory</arg>
+<arg>npx -y @modelcontextprotocol/server-filesystem /root/workspace</arg>
+<status status="FAIL" start="2025-04-27T15:33:16.806021" elapsed="210.652366">Keyword 'Run Docker Goose AI Prompt And Check Output' failed after retrying 8 times. The last error was: 'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Display Goose AI Logs" owner="generic-resources">
+<status status="NOT RUN" start="2025-04-27T15:36:47.458619" elapsed="0.000049"/>
+</kw>
+<arg>DOCKER_CONTAINER_NAME=docker-goose-cli-1</arg>
+<arg>GOOSE_AI_PROMPT=What are you?</arg>
+<arg>REPORT_NUMBER=1</arg>
+<status status="FAIL" start="2025-04-27T15:33:16.805494" elapsed="210.653251">Keyword 'Run Docker Goose AI Prompt And Check Output' failed after retrying 8 times. The last error was: 'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<tag>Questions</tag>
+<status status="SKIP" start="2025-04-27T15:33:16.804870" elapsed="210.654217">Failed task skipped using 'questions' tag.
+
+Original failure:
+Keyword 'Run Docker Goose AI Prompt And Check Output' failed after retrying 8 times. The last error was: 'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</test>
+<status status="SKIP" start="2025-04-27T15:33:16.785000" elapsed="210.654000"/>
+</suite>
+<suite id="s1-s2" name="Robotframework-Distributed-Tasks-Docker-Ai-Agent2" source="/Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/robotframework-distributed-tasks-docker-ai-agent2.robot">
+<test id="s1-s2-t1" name="DISTRIBUTED RPA AI-AGENT2 TASKS : Run datadriven AI-Agent tasks with this data -&gt; container_name = docker-goose-cli-2, prompt_message = What are you?, agent2_report_number = 1" line="12">
+<kw name="Run Tasks From Goose AI Agent">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-27T15:33:16.805914" level="INFO">${TIMESTAMP} = 2025_04_27_15-33-16-805871</msg>
+<var>${TIMESTAMP}</var>
+<arg>result_format=%Y_%m_%d_%H-%M-%S-%f</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-27T15:33:16.805794" elapsed="0.000137"/>
+</kw>
+<kw name="Wait Until Docker Goose AI Prompt Succeeds" owner="generic-resources">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:33:20.807670" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:33:16.806498" elapsed="4.001424"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:33:42.985777" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193320.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:33:20.808202" elapsed="22.177700"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:33:42.986811" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193320.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:33:42.986289" elapsed="0.000797">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193320.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:33:42.987233" elapsed="0.000061"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:33:42.987375" elapsed="0.000045"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:33:42.987489" elapsed="0.000035"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:33:42.987601" elapsed="0.000026"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:33:42.987702" elapsed="0.000034"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:33:42.987831" elapsed="0.000033"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:33:16.806366" elapsed="26.181643">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193320.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:33:47.239836" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:33:43.239279" elapsed="4.000697"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:34:09.423808" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193347.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:33:47.240173" elapsed="22.183756"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:34:09.427500" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193347.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:34:09.424306" elapsed="0.003311">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193347.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:09.427741" elapsed="0.000054"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:09.427879" elapsed="0.000039"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:09.427992" elapsed="0.000037"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:09.428958" elapsed="0.000051"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:09.429098" elapsed="0.000036"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:09.429234" elapsed="0.000036"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:33:43.238581" elapsed="26.190833">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193347.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:34:13.683360" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:34:09.681788" elapsed="4.001701"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:34:36.071052" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193413.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:34:13.683676" elapsed="22.387549"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:34:36.072533" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193413.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:34:36.071714" elapsed="0.001120">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193413.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:36.072983" elapsed="0.000059"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:36.073120" elapsed="0.000026"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:36.073212" elapsed="0.000034"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:36.073328" elapsed="0.000033"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:36.073469" elapsed="0.000033"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:34:36.073593" elapsed="0.000026"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:34:09.680773" elapsed="26.392978">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193413.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:34:40.327983" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:34:36.326395" elapsed="4.001713"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:35:02.167976" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193440.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:34:40.328301" elapsed="21.839892"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:35:02.169829" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193440.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:35:02.168833" elapsed="0.001211">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193440.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:02.170277" elapsed="0.000094"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:02.170468" elapsed="0.000033"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:02.171627" elapsed="0.000133"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:02.171910" elapsed="0.000039"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:02.172056" elapsed="0.000030"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:02.172205" elapsed="0.000029"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:34:36.324913" elapsed="25.847562">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193440.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:35:06.425614" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:35:02.425135" elapsed="4.000621"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:35:28.489035" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193506.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:35:06.425959" elapsed="22.063215"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:35:28.490036" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193506.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:35:28.489573" elapsed="0.000573">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193506.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:28.490250" elapsed="0.000035"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:28.490355" elapsed="0.000024"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:28.490444" elapsed="0.000026"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:28.490542" elapsed="0.000031"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:28.490642" elapsed="0.000022"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:28.490746" elapsed="0.000023"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:35:02.424164" elapsed="26.066727">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193506.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:35:32.744512" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:35:28.742945" elapsed="4.001969"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:35:55.337256" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193532.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:35:32.745494" elapsed="22.591954"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:35:55.338914" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193532.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:35:55.338006" elapsed="0.001066">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193532.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:55.340890" elapsed="0.000128"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:55.341142" elapsed="0.000033"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:55.341250" elapsed="0.000026"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:55.341361" elapsed="0.000028"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:55.341473" elapsed="0.000031"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:35:55.341615" elapsed="0.000030"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:35:28.741708" elapsed="26.600151">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193532.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:35:59.599384" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:35:55.596478" elapsed="4.003087"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:36:21.440698" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193559.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:35:59.599839" elapsed="21.841157"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:36:21.442885" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193559.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:36:21.441883" elapsed="0.001237">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193559.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:21.443396" elapsed="0.000121"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:21.443671" elapsed="0.000054"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:21.443856" elapsed="0.000050"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:21.444055" elapsed="0.000053"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:21.444250" elapsed="0.000048"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:21.444484" elapsed="0.000052"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:35:55.595086" elapsed="25.849738">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193559.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Run Docker Goose AI Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-27T15:36:25.702016" level="INFO">Slept 4 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-27T15:36:21.701109" elapsed="4.001052"/>
+</kw>
+<kw name="Send Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-27T15:36:48.267067" level="INFO">${OUTPUT} = starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Re...</msg>
+<var>${OUTPUT}</var>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a specific Goose AI Agent running in a specific Docker container.</doc>
+<status status="PASS" start="2025-04-27T15:36:25.702368" elapsed="22.564865"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2025-04-27T15:36:48.268393" level="FAIL">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${OUTPUT}</arg>
+<arg>Rate limit hit</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-04-27T15:36:48.267747" elapsed="0.000780">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:48.270309" elapsed="0.000046"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:48.270443" elapsed="0.000030"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:48.270559" elapsed="0.000029"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:48.270674" elapsed="0.000039"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:48.270807" elapsed="0.000032"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-04-27T15:36:48.270959" elapsed="0.000027"/>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<status status="FAIL" start="2025-04-27T15:36:21.699202" elapsed="26.571951">'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<msg time="2025-04-27T15:36:48.271331" level="FAIL">Keyword 'Run Docker Goose AI Prompt And Check Output' failed after retrying 8 times. The last error was: 'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</msg>
+<arg>${RETRY} times</arg>
+<arg>0.25 seconds</arg>
+<arg>Run Docker Goose AI Prompt And Check Output</arg>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${GOOSE_AI_EXTENSION1}</arg>
+<arg>${GOOSE_AI_EXTENSION2}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="FAIL" start="2025-04-27T15:33:16.806178" elapsed="211.465318">Keyword 'Run Docker Goose AI Prompt And Check Output' failed after retrying 8 times. The last error was: 'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<arg>${DOCKER_CONTAINER_NAME}</arg>
+<arg>${GOOSE_AI_PROMPT} write a detailed summary of that work in an agent2-report${REPORT_NUMBER}-${TIMESTAMP}.md file and ${GOOSE_AI_DOCKER_OUTPUT_COLLECTOR}</arg>
+<arg>npx -y @modelcontextprotocol/server-memory</arg>
+<arg>npx -y @modelcontextprotocol/server-sequential-thinking</arg>
+<status status="FAIL" start="2025-04-27T15:33:16.806008" elapsed="211.465607">Keyword 'Run Docker Goose AI Prompt And Check Output' failed after retrying 8 times. The last error was: 'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<kw name="Display Goose AI Logs" owner="generic-resources">
+<status status="NOT RUN" start="2025-04-27T15:36:48.271882" elapsed="0.000055"/>
+</kw>
+<arg>DOCKER_CONTAINER_NAME=docker-goose-cli-2</arg>
+<arg>GOOSE_AI_PROMPT=What are you?</arg>
+<arg>REPORT_NUMBER=1</arg>
+<status status="FAIL" start="2025-04-27T15:33:16.805475" elapsed="211.466537">Keyword 'Run Docker Goose AI Prompt And Check Output' failed after retrying 8 times. The last error was: 'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</kw>
+<tag>Questions</tag>
+<status status="SKIP" start="2025-04-27T15:33:16.804861" elapsed="211.467557">Failed task skipped using 'questions' tag.
+
+Original failure:
+Keyword 'Run Docker Goose AI Prompt And Check Output' failed after retrying 8 times. The last error was: 'starting session | provider: google model: gemini-2.5-pro-preview-03-25
+    logging to /root/.local/share/goose/sessions/20250427_193625.jsonl
+    working directory: /root/workspace
+Rate limit hit. Retrying in 4s
+Rate limit hit. Retrying in 6s
+Rate limit hit. Retrying in 10s
+' contains 'Rate limit hit'</status>
+</test>
+<status status="SKIP" start="2025-04-27T15:33:16.785099" elapsed="211.488188"/>
+</suite>
+<doc>[https://pabot.org/?ref=log|Pabot] result from 2 executions.</doc>
+<status status="SKIP" start="2025-04-27T15:33:16.779000" elapsed="211.495000"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="0" skip="2">All Tasks</stat>
+</total>
+<tag>
+<stat pass="0" fail="0" skip="2">Questions</stat>
+</tag>
+<suite>
+<stat name="Suites" id="s1" pass="0" fail="0" skip="2">Suites</stat>
+<stat name="Robotframework-Distributed-Tasks-Docker-Ai-Agent1" id="s1-s1" pass="0" fail="0" skip="1">Suites.Robotframework-Distributed-Tasks-Docker-Ai-Agent1</stat>
+<stat name="Robotframework-Distributed-Tasks-Docker-Ai-Agent2" id="s1-s2" pass="0" fail="0" skip="1">Suites.Robotframework-Distributed-Tasks-Docker-Ai-Agent2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

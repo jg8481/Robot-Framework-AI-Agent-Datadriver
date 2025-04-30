@@ -1,0 +1,25 @@
+ollama version is 0.6.6
+
+NAME                 ID              SIZE      MODIFIED     
+qwen2.5:14b          7cdf5a0187d5    9.0 GB    17 hours ago    
+qwen2.5-coder:14b    3028237cc8c5    9.0 GB    17 hours ago    
+qwen2.5:latest       845dbda0ea48    4.7 GB    42 hours ago    
+
+  Model
+    architecture        qwen2     
+    parameters          7.6B      
+    context length      32768     
+    embedding length    3584      
+    quantization        Q4_K_M    
+
+  Capabilities
+    completion    
+    tools         
+
+  System
+    You are Qwen, created by Alibaba Cloud. You are a helpful assistant.    
+
+  License
+    Apache License               
+    Version 2.0, January 2004    
+

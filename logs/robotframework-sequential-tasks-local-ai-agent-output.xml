@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.10 on darwin)" generated="2025-04-29T09:18:27.434946" rpa="true" schemaversion="5">
+<suite id="s1" name="Robotframework-Sequential-Tasks-Local-Ai-Agent" source="/Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/robotframework-sequential-tasks-local-ai-agent.robot">
+<test id="s1-t1" name="SEQUENTIAL RPA AI-AGENT5 TASKS : Run datadriven AI-Agent tasks with this data -&gt; prompt_message = 'Who was Edgar Allen Poe?', local_agent_report_number  = 1" line="16">
+<kw name="Run Tasks From Local Goose AI Agent">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-29T09:18:27.475134" level="INFO">${TIMESTAMP} = 2025_04_29_09-18-27-475093</msg>
+<var>${TIMESTAMP}</var>
+<arg>result_format=%Y_%m_%d_%H-%M-%S-%f</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-29T09:18:27.475040" elapsed="0.000110"/>
+</kw>
+<kw name="Run Goose AI Based On Instruction Type" owner="generic-resources">
+<if>
+<branch type="IF" condition="&quot;${INSTRUCTION_TYPE}&quot; == &quot;User_Prompt&quot;">
+<kw name="Wait Until Local Goose Prompt Succeeds" owner="generic-resources">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Local Goose Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-29T09:18:29.475989" level="INFO">Slept 2 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-29T09:18:27.475781" elapsed="2.000379"/>
+</kw>
+<kw name="Send Local Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-29T09:19:33.323457" level="INFO">${OUTPUT} = starting session | provider: ollama model: qwen2.5:14b
+    logging to /Users/jgorospe/.local/share/goose/sessions/20250429_091830.jsonl
+    working directory: /Users/jgorospe/Documents/GitHub/Robot-Fr...</msg>
+<var>${OUTPUT}</var>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a local Goose AI Agent running on a local machine that is also running Ollama. Also measures CLI runtime.</doc>
+<status status="PASS" start="2025-04-29T09:18:29.476379" elapsed="63.847551"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.325146" elapsed="0.001068"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.326720" elapsed="0.000383"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.327676" elapsed="0.000507"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.328411" elapsed="0.000374"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.328981" elapsed="0.000251"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>extension_name:</arg>
+<arg>uri:</arg>
+<arg>Tool not found</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.329406" elapsed="0.000220"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>platform</arg>
+<arg>search_available_extensions</arg>
+<arg>remember_memory</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.329760" elapsed="0.000203"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>。</arg>
+<arg>、</arg>
+<arg>大</arg>
+<arg>澳</arg>
+<arg>中</arg>
+<arg>一</arg>
+<arg>·</arg>
+<arg>文</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.330090" elapsed="0.000211"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-04-29T09:19:33.330878" level="INFO">${OUTPUT} = starting session | provider: ollama model: qwen2.5:14b
+    logging to /Users/jgorospe/.local/share/goose/sessions/20250429_091830.jsonl
+    working directory: /Users/jgorospe/Documents/GitHub/Robot-Fr...</msg>
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.330476" elapsed="0.000441"/>
+</kw>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<status status="PASS" start="2025-04-29T09:18:27.475698" elapsed="65.855377"/>
+</kw>
+<arg>${RETRY} times</arg>
+<arg>0.25 seconds</arg>
+<arg>Run Local Goose Prompt And Check Output</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-04-29T09:18:27.475596" elapsed="65.855561"/>
+</kw>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<timeout value="1 hour"/>
+<status status="PASS" start="2025-04-29T09:18:27.475478" elapsed="65.855749"/>
+</kw>
+<status status="PASS" start="2025-04-29T09:18:27.475399" elapsed="65.855911"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${INSTRUCTION_TYPE}&quot; == &quot;Markdown_File&quot;">
+<kw name="Wait Until Local Goose Instruction File Succeeds" owner="generic-resources">
+<arg>${EXECDIR}/agent-instructions/detailed-instructions/${GOOSE_AI_PROMPT}</arg>
+<status status="NOT RUN" start="2025-04-29T09:19:33.331750" elapsed="0.000041"/>
+</kw>
+<status status="NOT RUN" start="2025-04-29T09:19:33.331413" elapsed="0.000417"/>
+</branch>
+<status status="PASS" start="2025-04-29T09:18:27.475388" elapsed="65.856489"/>
+</if>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${INSTRUCTION_TYPE}</arg>
+<status status="PASS" start="2025-04-29T09:18:27.475291" elapsed="65.856695"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-04-29T09:19:33.334468" level="INFO" html="true">Created file '&lt;a href="file:///Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report1-2025_04_29_09-18-27-475093.md"&gt;/Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report1-2025_04_29_09-18-27-475093.md&lt;/a&gt;'.</msg>
+<arg>${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md</arg>
+<arg>${OUTPUT}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.332131" elapsed="0.002475"/>
+</kw>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-04-29T09:19:33.342656" level="INFO">Running command 'cat /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report1-2025_04_29_09-18-27-475093.md | sed -E 's/[[0-9;]*[mK]//g' &gt; /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report1-2025_04_29_09-18-27-475093.md'.</msg>
+<arg>cat ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md | sed -E 's/\x1B\[[0-9;]*[mK]//g' &gt; ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report${REPORT_NUMBER}-${TIMESTAMP}.md</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.334808" elapsed="0.030140"/>
+</kw>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-04-29T09:19:33.367931" level="INFO">Running command 'mv /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report1-2025_04_29_09-18-27-475093.md /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report1-2025_04_29_09-18-27-475093.md 2&gt;&amp;1'.</msg>
+<arg>mv ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report${REPORT_NUMBER}-${TIMESTAMP}.md ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.365579" elapsed="0.010060"/>
+</kw>
+<kw name="Display Goose AI Logs" owner="generic-resources">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.376431" elapsed="0.000154"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.376644" elapsed="0.000066"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.376759" elapsed="0.000058"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.376861" elapsed="0.000100"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.377009" elapsed="0.000054"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.377106" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.377200" elapsed="0.000050"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-29T09:19:33.377366" level="INFO">starting session | provider: ollama model: qwen2.5:14b
+    logging to /Users/jgorospe/.local/share/goose/sessions/20250429_091830.jsonl
+    working directory: /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver
+[38;2;222;222;222mI don't need to use any of the provided functions to answer this question. Here's a brief biography about Edgar Allan Poe:[0m
+
+[38;2;222;222;222mEdgar Allan Poe (born January 19, 1809 – died October 7, 1849) was an American writer, editor, and literary critic who is widely regarded as one of the most influential figures in both American literature and English-language literature. He was born in Boston, Massachusetts to actors David Poe Jr. and Elizabeth Arnold Hopkins. By the age of three, his parents had died due to tuberculosis, leaving him orphaned.[0m
+
+[38;2;222;222;222mHe was then taken in by John Allan, a wealthy tobacco merchant who lived near where he and Edgar's foster mother resided in Richmond, Virginia. The surname "Allan" as well as the middle name "Allan," are likely because Poe would have been part of the household with Mr. Allan as his stepfather.[0m
+
+[38;2;222;222;222mPoe is best known for his poetry, short stories, and literary criticism. He was one of the first writers to try making a living from literature. His famous works include poems like "The Raven" (1845), and tales such as "The Tell-Tale Heart" (1843) and "The Cask of Amontillado" (1846). [0m
+
+[38;2;222;222;222mHe is also known for his mysterious death which remains a topic of speculation among literary scholars. Poe's writing had a significant influence on the development of mystery, detective novels, psychological horror, science fiction and gothic genres.[0m
+</msg>
+<arg>${OUTPUT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.377295" elapsed="0.000121"/>
+</kw>
+<status status="PASS" start="2025-04-29T09:19:33.376061" elapsed="0.001384"/>
+</kw>
+<arg>GOOSE_AI_PROMPT='Who was Edgar Allen Poe?'</arg>
+<arg>INSTRUCTION_TYPE=User_Prompt</arg>
+<arg>REPORT_NUMBER=1</arg>
+<status status="PASS" start="2025-04-29T09:18:27.474771" elapsed="65.902703"/>
+</kw>
+<tag>Questions</tag>
+<status status="PASS" start="2025-04-29T09:18:27.474218" elapsed="65.903420"/>
+</test>
+<test id="s1-t2" name="SEQUENTIAL RPA AI-AGENT5 TASKS : Run datadriven AI-Agent tasks with this data -&gt; prompt_message = 'Can you give me a detailed explanation of how functional programming works and why it is useful?', local_agent_report_number  = 2" line="16">
+<kw name="Run Tasks From Local Goose AI Agent">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-29T09:19:33.379129" level="INFO">${TIMESTAMP} = 2025_04_29_09-19-33-379058</msg>
+<var>${TIMESTAMP}</var>
+<arg>result_format=%Y_%m_%d_%H-%M-%S-%f</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.378973" elapsed="0.000170"/>
+</kw>
+<kw name="Run Goose AI Based On Instruction Type" owner="generic-resources">
+<if>
+<branch type="IF" condition="&quot;${INSTRUCTION_TYPE}&quot; == &quot;User_Prompt&quot;">
+<kw name="Wait Until Local Goose Prompt Succeeds" owner="generic-resources">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Local Goose Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-29T09:19:35.381084" level="INFO">Slept 2 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.380058" elapsed="2.001356"/>
+</kw>
+<kw name="Send Local Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-29T09:20:35.432056" level="INFO">${OUTPUT} = starting session | provider: ollama model: qwen2.5:14b
+    logging to /Users/jgorospe/.local/share/goose/sessions/20250429_091935.jsonl
+    working directory: /Users/jgorospe/Documents/GitHub/Robot-Fr...</msg>
+<var>${OUTPUT}</var>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a local Goose AI Agent running on a local machine that is also running Ollama. Also measures CLI runtime.</doc>
+<status status="PASS" start="2025-04-29T09:19:35.381811" elapsed="60.050388"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.432755" elapsed="0.000875"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.433866" elapsed="0.000300"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.434302" elapsed="0.000412"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.434902" elapsed="0.000311"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.435310" elapsed="0.000187"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>extension_name:</arg>
+<arg>uri:</arg>
+<arg>Tool not found</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.436404" elapsed="0.000394"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>platform</arg>
+<arg>search_available_extensions</arg>
+<arg>remember_memory</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.436947" elapsed="0.000234"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>。</arg>
+<arg>、</arg>
+<arg>大</arg>
+<arg>澳</arg>
+<arg>中</arg>
+<arg>一</arg>
+<arg>·</arg>
+<arg>文</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.437314" elapsed="0.000206"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-04-29T09:20:35.438098" level="INFO">${OUTPUT} = starting session | provider: ollama model: qwen2.5:14b
+    logging to /Users/jgorospe/.local/share/goose/sessions/20250429_091935.jsonl
+    working directory: /Users/jgorospe/Documents/GitHub/Robot-Fr...</msg>
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.437683" elapsed="0.000468"/>
+</kw>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<status status="PASS" start="2025-04-29T09:19:33.379950" elapsed="62.058369"/>
+</kw>
+<arg>${RETRY} times</arg>
+<arg>0.25 seconds</arg>
+<arg>Run Local Goose Prompt And Check Output</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-04-29T09:19:33.379811" elapsed="62.058558"/>
+</kw>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<timeout value="1 hour"/>
+<status status="PASS" start="2025-04-29T09:19:33.379638" elapsed="62.058805"/>
+</kw>
+<status status="PASS" start="2025-04-29T09:19:33.379490" elapsed="62.058988"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${INSTRUCTION_TYPE}&quot; == &quot;Markdown_File&quot;">
+<kw name="Wait Until Local Goose Instruction File Succeeds" owner="generic-resources">
+<arg>${EXECDIR}/agent-instructions/detailed-instructions/${GOOSE_AI_PROMPT}</arg>
+<status status="NOT RUN" start="2025-04-29T09:20:35.438921" elapsed="0.000052"/>
+</kw>
+<status status="NOT RUN" start="2025-04-29T09:20:35.438589" elapsed="0.000421"/>
+</branch>
+<status status="PASS" start="2025-04-29T09:19:33.379474" elapsed="62.059565"/>
+</if>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${INSTRUCTION_TYPE}</arg>
+<status status="PASS" start="2025-04-29T09:19:33.379354" elapsed="62.059765"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-04-29T09:20:35.440363" level="INFO" html="true">Created file '&lt;a href="file:///Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report2-2025_04_29_09-19-33-379058.md"&gt;/Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report2-2025_04_29_09-19-33-379058.md&lt;/a&gt;'.</msg>
+<arg>${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md</arg>
+<arg>${OUTPUT}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.439253" elapsed="0.001214"/>
+</kw>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-04-29T09:20:35.447364" level="INFO">Running command 'cat /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report2-2025_04_29_09-19-33-379058.md | sed -E 's/[[0-9;]*[mK]//g' &gt; /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report2-2025_04_29_09-19-33-379058.md'.</msg>
+<arg>cat ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md | sed -E 's/\x1B\[[0-9;]*[mK]//g' &gt; ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report${REPORT_NUMBER}-${TIMESTAMP}.md</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.440627" elapsed="0.048132"/>
+</kw>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-04-29T09:20:35.492181" level="INFO">Running command 'mv /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report2-2025_04_29_09-19-33-379058.md /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report2-2025_04_29_09-19-33-379058.md 2&gt;&amp;1'.</msg>
+<arg>mv ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report${REPORT_NUMBER}-${TIMESTAMP}.md ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.489379" elapsed="0.013110"/>
+</kw>
+<kw name="Display Goose AI Logs" owner="generic-resources">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.503549" elapsed="0.000244"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.503877" elapsed="0.000074"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.503994" elapsed="0.000051"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.504085" elapsed="0.000422"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.504605" elapsed="0.000102"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.504760" elapsed="0.000063"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.504866" elapsed="0.000053"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-29T09:20:35.505056" level="INFO">starting session | provider: ollama model: qwen2.5:14b
+    logging to /Users/jgorospe/.local/share/goose/sessions/20250429_091935.jsonl
+    working directory: /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver
+[38;2;222;222;222mFunctional programming (FP) is a programming paradigm where programs are constructed by applying and composing functions. It emphasizes the application of functions to solve problems, rather than the execution of procedures or changing state through mutable data.[0m
+
+[1;38;2;222;222;222m###[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mKey Concepts in Functional Programming[0m
+
+[38;2;222;222;222m1[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mFunctions as First-Class Citizens:[0m[1;38;2;222;222;222m**[0m
+[38;2;222;222;222m   [0m[38;2;222;222;222mIn functional programming languages, functions can be treated like any other variable type. They can be assigned to variables, returned from other functions, and passed as arguments to other functions.[0m
+
+[38;2;222;222;222m2[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mPure Functions:[0m[1;38;2;222;222;222m**[0m
+[38;2;222;222;222m   [0m[38;2;222;222;222mA pure function is a function that has no side effects. This means it should not alter observable state outside its scope—like writing to the database or modifying an object's property—and its return value depends solely on its input parameters (it operates only on local data). Examples of non-pure functions include those that manipulate global variables, perform I/O operations, or modify their own properties.[0m
+
+[38;2;222;222;222m3[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mHigher-Order Functions:[0m[1;38;2;222;222;222m**[0m
+[38;2;222;222;222m   [0m[38;2;222;222;222mHigher-order functions are a principle aspect of functional programming where a function can either take one or more functions as arguments (called currying), return them as output, or both. This enables powerful abstractions like [0m[38;2;254;214;175m`[0m[38;2;254;214;175mmap[0m[38;2;254;214;175m`[0m[38;2;222;222;222m, [0m[38;2;254;214;175m`[0m[38;2;254;214;175mfilter[0m[38;2;254;214;175m`[0m[38;2;222;222;222m, and [0m[38;2;254;214;175m`[0m[38;2;254;214;175mreduce[0m[38;2;254;214;175m`[0m[38;2;222;222;222m which operate on collections (lists, arrays) in a declarative manner.[0m
+
+[38;2;222;222;222m4[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mImmutable Data:[0m[1;38;2;222;222;222m**[0m
+[38;2;222;222;222m   [0m[38;2;222;222;222mFunctional programming emphasizes that once data is created, it remains unchanged throughout its lifecycle. Any change to immutable objects actually creates a new object rather than modifying the original one, avoiding side effects.[0m
+
+[38;2;222;222;222m5[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mRecursion:[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m [0m
+[38;2;222;222;222m   [0m[38;2;222;222;222mSince FP encourages thinking about functions and their outputs, recursion naturally follows as an important technique for creating loops in functional languages. Instead of iteration (commonly used in imperative programming), you define functions that call themselves until some condition is met or changed, ensuring the computation continues until it finds or achieves its intended task.[0m
+
+[1;38;2;222;222;222m###[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mWhy Is Functional Programming Useful?[0m
+
+[38;2;222;222;222m1[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mEase of Testing:[0m[1;38;2;222;222;222m**[0m
+[38;2;222;222;222m   [0m[38;2;222;222;222mPure functions are easier to test because they don't rely on side effects and their output can be reliably predicted from their input alone, making unit tests more straightforward.[0m
+
+[38;2;222;222;222m2[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mConcurrency [0m[1;38;2;222;222;222m&amp;[0m[1;38;2;222;222;222m Parallelism:[0m[1;38;2;222;222;222m**[0m
+[38;2;222;222;222m   [0m[38;2;222;222;222mThe lack of state makes it much simpler to write concurrent or parallel code without worrying about data races or needing complex locking mechanisms to prevent inconsistencies that arise from multiple threads operating on shared mutable state.[0m
+
+[38;2;222;222;222m3[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mCode Reusability and Composability:[0m[1;38;2;222;222;222m**[0m
+[38;2;222;222;222m   [0m[38;2;222;222;222mFunctions acting as first-class objects and higher-order functions enable composing simple building blocks into more complicated programs. The process of breaking down problems further than you might in imperatively written programs usually results in much greater reuse between function implementations.[0m
+
+[38;2;222;222;222m4[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mExpressiveness for Declarative Programming:[0m[1;38;2;222;222;222m**[0m
+[38;2;222;222;222m   [0m[38;2;222;222;222mFunctional programming makes it possible to write declarative, rather than imperative code; this means you can focus on describing what something should be rather than how to explicitly achieve it step by step, leading to more concise and understandable programs.[0m
+
+[38;2;222;222;222m5[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mMaintainability:[0m[1;38;2;222;222;222m**[0m
+[38;2;222;222;222m   [0m[38;2;222;222;222mBecause pure functions don't rely on mutable states and are easier to test, it's often easier to trace the source of problems in a codebase written with a strong functional style. This translates into fewer bugs and more reliable software with reduced time spent debugging compared to dealing with side effects prevalent in imperative programming.[0m
+
+[1;38;2;222;222;222m###[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mExamples[0m
+
+[38;2;222;222;222mPython (not pure FP but supports concepts): Here’s an example showing immutability, functions as arguments:[0m
+[38;2;222;222;222m```[0m[1;38;2;204;148;149mpython[0m
+[38;2;254;214;175mdef[0m[38;2;222;222;222m [0m[38;2;255;253;135madd_one[0m[38;2;222;222;222m([0m[38;2;222;222;222mx[0m[38;2;222;222;222m)[0m[38;2;222;222;222m:[0m
+[38;2;222;222;222m    [0m[38;2;254;214;175mreturn[0m[38;2;222;222;222m [0m[38;2;222;222;222mx[0m[38;2;222;222;222m [0m[38;2;236;236;236m+[0m[38;2;222;222;222m [0m[1;38;2;135;214;213m1[0m
+
+[38;2;160;207;161m#[0m[38;2;135;174;134m Pure function using a higher-order function map()[0m
+[38;2;222;222;222mnumbers[0m[38;2;222;222;222m [0m[38;2;236;236;236m=[0m[38;2;222;222;222m [0m[38;2;222;222;222m[[0m[1;38;2;135;214;213m1[0m[38;2;222;222;222m,[0m[38;2;222;222;222m [0m[1;38;2;135;214;213m2[0m[38;2;222;222;222m,[0m[38;2;222;222;222m [0m[1;38;2;135;214;213m3[0m[38;2;222;222;222m][0m
+[38;2;222;222;222mnew_numbers[0m[38;2;222;222;222m [0m[38;2;236;236;236m=[0m[38;2;222;222;222m [0m[38;2;255;251;157mlist[0m[38;2;222;222;222m([0m[38;2;255;253;135mmap[0m[38;2;222;222;222m([0m[38;2;222;222;222madd_one[0m[38;2;222;222;222m,[0m[38;2;222;222;222m [0m[38;2;222;222;222mnumbers[0m[38;2;222;222;222m)[0m[38;2;222;222;222m)[0m[38;2;222;222;222m [0m[38;2;160;207;161m#[0m[38;2;135;174;134m Returns: [2, 3, 4][0m
+
+[38;2;254;214;175mdef[0m[38;2;222;222;222m [0m[38;2;255;253;135mdouble_values[0m[38;2;222;222;222m([0m[38;2;222;222;222mvalues[0m[38;2;222;222;222m)[0m[38;2;222;222;222m:[0m
+[38;2;222;222;222m    [0m[38;2;160;207;161m"""[0m
+[38;2;135;174;134m    Higher-order example demonstrating functional style.[0m
+[38;2;135;174;134m    It takes in a collection and returns another with elements doubled,[0m
+[38;2;135;174;134m    via an anonymous (lambda) function passed to the map() method.[0m
+[38;2;135;174;134m    [0m[38;2;160;207;161m"""[0m
+[38;2;222;222;222m    [0m[38;2;254;214;175mreturn[0m[38;2;222;222;222m [0m[38;2;255;251;157mlist[0m[38;2;222;222;222m([0m[38;2;255;253;135mmap[0m[38;2;222;222;222m([0m[38;2;254;214;175mlambda[0m[38;2;222;222;222m [0m[38;2;222;222;222mx[0m[38;2;222;222;222m:[0m[38;2;222;222;222m [0m[38;2;222;222;222mx[0m[38;2;236;236;236m*[0m[1;38;2;135;214;213m2[0m[38;2;222;222;222m,[0m[38;2;222;222;222m [0m[38;2;222;222;222mvalues[0m[38;2;222;222;222m)[0m[38;2;222;222;222m)[0m
+
+[38;2;222;222;222mdoubled_numbers[0m[38;2;222;222;222m [0m[38;2;236;236;236m=[0m[38;2;222;222;222m [0m[38;2;222;222;222mdouble_values[0m[38;2;222;222;222m([0m[38;2;222;222;222mnumbers[0m[38;2;222;222;222m)[0m
+[38;2;255;253;135mprint[0m[38;2;222;222;222m([0m[38;2;222;222;222mdoubled_numbers[0m[38;2;222;222;222m)[0m[38;2;222;222;222m [0m[38;2;160;207;161m#[0m[38;2;135;174;134m Prints: [2, 4, 6][0m
+[38;2;222;222;222m```[0m
+
+[38;2;222;222;222mJavaScript:[0m
+[38;2;222;222;222m```[0m[1;38;2;204;148;149mjavascript[0m
+[38;2;255;251;157mconst[0m[38;2;222;222;222m [0m[38;2;255;253;135msquare[0m[38;2;222;222;222m [0m[38;2;236;236;236m=[0m[38;2;222;222;222m [0m[38;2;222;222;222mx[0m[38;2;222;222;222m [0m[38;2;255;251;157m=&gt;[0m[38;2;222;222;222m [0m[38;2;222;222;222mx[0m[38;2;222;222;222m [0m[38;2;236;236;236m*[0m[38;2;222;222;222m [0m[38;2;222;222;222mx[0m[38;2;222;222;222m;[0m
+[38;2;255;251;157mlet[0m[38;2;222;222;222m [0m[38;2;222;222;222msquaredNumbers[0m[38;2;222;222;222m [0m[38;2;236;236;236m=[0m[38;2;222;222;222m [0m[38;2;222;222;222m[[0m[38;2;222;222;222m][0m[38;2;222;222;222m;[0m
+
+[38;2;255;251;157mconst[0m[38;2;222;222;222m [0m[38;2;255;253;135mprocessListWithHigherOrderFunction[0m[38;2;222;222;222m [0m[38;2;236;236;236m=[0m[38;2;222;222;222m [0m[38;2;222;222;222m([0m[38;2;222;222;222mlist[0m[38;2;222;222;222m,[0m[38;2;222;222;222m [0m[38;2;222;222;222mfn[0m[38;2;222;222;222m)[0m[38;2;222;222;222m [0m[38;2;255;251;157m=&gt;[0m[38;2;222;222;222m [0m[38;2;222;222;222m{[0m
+[38;2;222;222;222m    [0m[38;2;254;214;175mfor[0m[38;2;222;222;222m([0m[38;2;255;251;157mlet[0m[38;2;222;222;222m [0m[38;2;222;222;222mi[0m[38;2;222;222;222m [0m[38;2;236;236;236min[0m[38;2;222;222;222m [0m[38;2;222;222;222mlist[0m[38;2;222;222;222m)[0m[38;2;222;222;222m{[0m
+[38;2;222;222;222m        [0m[38;2;255;251;157mlet[0m[38;2;222;222;222m [0m[38;2;222;222;222mvalue[0m[38;2;222;222;222m [0m[38;2;236;236;236m=[0m[38;2;222;222;222m [0m[38;2;222;222;222mlist[0m[38;2;222;222;222m[[0m[38;2;222;222;222mi[0m[38;2;222;222;222m][0m[38;2;222;222;222m;[0m
+[38;2;222;222;222m        [0m[38;2;255;251;157mconst[0m[38;2;222;222;222m [0m[38;2;222;222;222mresult[0m[38;2;222;222;222m [0m[38;2;236;236;236m=[0m[38;2;222;222;222m [0m[38;2;222;222;222mfn[0m[38;2;222;222;222m([0m[38;2;222;222;222mvalue[0m[38;2;222;222;222m)[0m[38;2;222;222;222m;[0m
+[38;2;222;222;222m        [0m[38;2;255;251;157mconsole[0m[38;2;236;236;236m.[0m[38;2;255;253;135mlog[0m[38;2;222;222;222m([0m[38;2;254;214;175m`[0m[38;2;214;134;134mP[0m[38;2;214;134;134mr[0m[38;2;214;134;134mo[0m[38;2;214;134;134mc[0m[38;2;214;134;134me[0m[38;2;214;134;134ms[0m[38;2;214;134;134ms[0m[38;2;214;134;134mi[0m[38;2;214;134;134mn[0m[38;2;214;134;134mg[0m[38;2;214;134;134m [0m[38;2;254;214;175m${[0m[38;2;222;222;222mvalue[0m[38;2;254;214;175m}[0m[38;2;214;134;134m,[0m[38;2;214;134;134m [0m[38;2;214;134;134mR[0m[38;2;214;134;134me[0m[38;2;214;134;134ms[0m[38;2;214;134;134mu[0m[38;2;214;134;134ml[0m[38;2;214;134;134mt[0m[38;2;214;134;134m:[0m[38;2;214;134;134m [0m[38;2;254;214;175m${[0m[38;2;222;222;222mresult[0m[38;2;254;214;175m}[0m[38;2;254;214;175m`[0m[38;2;222;222;222m)[0m[38;2;222;222;222m;[0m
+[38;2;222;222;222m        [0m[38;2;222;222;222msquaredNumbers[0m[38;2;236;236;236m.[0m[38;2;222;222;222mpush[0m[38;2;222;222;222m([0m[38;2;222;222;222mresult[0m[38;2;222;222;222m)[0m[38;2;222;222;222m;[0m[38;2;222;222;222m [0m
+[38;2;222;222;222m    [0m[38;2;222;222;222m}[0m
+[38;2;222;222;222m}[0m[38;2;222;222;222m;[0m
+
+[38;2;222;222;222mprocessListWithHigherOrderFunction[0m[38;2;222;222;222m([0m[38;2;222;222;222m[[0m[1;38;2;135;214;213m1[0m[38;2;222;222;222m, [0m[1;38;2;135;214;213m2[0m[38;2;222;222;222m, [0m[1;38;2;135;214;213m3[0m[38;2;222;222;222m][0m[38;2;222;222;222m, [0m[38;2;222;222;222msquare[0m[38;2;222;222;222m)[0m[38;2;222;222;222m;[0m
+
+[38;2;255;251;157mconsole[0m[38;2;236;236;236m.[0m[38;2;255;253;135mlog[0m[38;2;222;222;222m([0m[38;2;222;222;222msquaredNumbers[0m[38;2;222;222;222m)[0m[38;2;222;222;222m;[0m[38;2;222;222;222m [0m[38;2;160;207;161m//[0m[38;2;135;174;134m Outputs: [1, 4, 9][0m
+[38;2;222;222;222m```[0m
+
+[38;2;222;222;222mIn summary, functional programming promotes a style of coding that emphasizes the use of simple functions without side effects and makes programs inherently easier to reason about, test and maintain. It's especially beneficial in scenarios with intense concurrency needs or complex data processing tasks.[0m
+</msg>
+<arg>${OUTPUT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.504967" elapsed="0.000499"/>
+</kw>
+<status status="PASS" start="2025-04-29T09:20:35.503083" elapsed="0.002424"/>
+</kw>
+<arg>GOOSE_AI_PROMPT='Can you give me a detailed explanation of how functional programming works and why it is useful?'</arg>
+<arg>INSTRUCTION_TYPE=User_Prompt</arg>
+<arg>REPORT_NUMBER=2</arg>
+<status status="PASS" start="2025-04-29T09:19:33.378807" elapsed="62.126733"/>
+</kw>
+<tag>Questions</tag>
+<status status="PASS" start="2025-04-29T09:19:33.377841" elapsed="62.127851"/>
+</test>
+<test id="s1-t3" name="SEQUENTIAL RPA AI-AGENT5 TASKS : Run datadriven AI-Agent tasks with this data -&gt; prompt_message = 'What is the OWASP top 10?/n How do I use that knowledge to help my team at my job?/n Where can I find more information on web application security other than OWASP?', local_agent_report_number  = 3" line="16">
+<kw name="Run Tasks From Local Goose AI Agent">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-29T09:20:35.507280" level="INFO">${TIMESTAMP} = 2025_04_29_09-20-35-507200</msg>
+<var>${TIMESTAMP}</var>
+<arg>result_format=%Y_%m_%d_%H-%M-%S-%f</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.507111" elapsed="0.000185"/>
+</kw>
+<kw name="Run Goose AI Based On Instruction Type" owner="generic-resources">
+<if>
+<branch type="IF" condition="&quot;${INSTRUCTION_TYPE}&quot; == &quot;User_Prompt&quot;">
+<kw name="Wait Until Local Goose Prompt Succeeds" owner="generic-resources">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Local Goose Prompt And Check Output" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-29T09:20:37.510271" level="INFO">Slept 2 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.508390" elapsed="2.002168"/>
+</kw>
+<kw name="Send Local Ai Agent Prompt Message" owner="AIAgentLibrary">
+<msg time="2025-04-29T09:21:31.294549" level="INFO">${OUTPUT} = starting session | provider: ollama model: qwen2.5:14b
+    logging to /Users/jgorospe/.local/share/goose/sessions/20250429_092037.jsonl
+    working directory: /Users/jgorospe/Documents/GitHub/Robot-Fr...</msg>
+<var>${OUTPUT}</var>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<doc>Use the 'goose run' command to send a prompt message to a local Goose AI Agent running on a local machine that is also running Ollama. Also measures CLI runtime.</doc>
+<status status="PASS" start="2025-04-29T09:20:37.510936" elapsed="53.783879"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.295528" elapsed="0.000533"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.296153" elapsed="0.000224"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.296546" elapsed="0.000262"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.297184" elapsed="0.000680"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.298144" elapsed="0.000350"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>extension_name:</arg>
+<arg>uri:</arg>
+<arg>Tool not found</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.298675" elapsed="0.000291"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>platform</arg>
+<arg>search_available_extensions</arg>
+<arg>remember_memory</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.299150" elapsed="0.000269"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>。</arg>
+<arg>、</arg>
+<arg>大</arg>
+<arg>澳</arg>
+<arg>中</arg>
+<arg>一</arg>
+<arg>·</arg>
+<arg>文</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.299535" elapsed="0.000112"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-04-29T09:21:31.300066" level="INFO">${OUTPUT} = starting session | provider: ollama model: qwen2.5:14b
+    logging to /Users/jgorospe/.local/share/goose/sessions/20250429_092037.jsonl
+    working directory: /Users/jgorospe/Documents/GitHub/Robot-Fr...</msg>
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.299787" elapsed="0.000312"/>
+</kw>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<status status="PASS" start="2025-04-29T09:20:35.508257" elapsed="55.791954"/>
+</kw>
+<arg>${RETRY} times</arg>
+<arg>0.25 seconds</arg>
+<arg>Run Local Goose Prompt And Check Output</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-04-29T09:20:35.508080" elapsed="55.792183"/>
+</kw>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<timeout value="1 hour"/>
+<status status="PASS" start="2025-04-29T09:20:35.507732" elapsed="55.792581"/>
+</kw>
+<status status="PASS" start="2025-04-29T09:20:35.507572" elapsed="55.792774"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${INSTRUCTION_TYPE}&quot; == &quot;Markdown_File&quot;">
+<kw name="Wait Until Local Goose Instruction File Succeeds" owner="generic-resources">
+<arg>${EXECDIR}/agent-instructions/detailed-instructions/${GOOSE_AI_PROMPT}</arg>
+<status status="NOT RUN" start="2025-04-29T09:21:31.300665" elapsed="0.000029"/>
+</kw>
+<status status="NOT RUN" start="2025-04-29T09:21:31.300417" elapsed="0.000315"/>
+</branch>
+<status status="PASS" start="2025-04-29T09:20:35.507555" elapsed="55.793215"/>
+</if>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${INSTRUCTION_TYPE}</arg>
+<status status="PASS" start="2025-04-29T09:20:35.507413" elapsed="55.793438"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-04-29T09:21:31.302830" level="INFO" html="true">Created file '&lt;a href="file:///Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report3-2025_04_29_09-20-35-507200.md"&gt;/Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report3-2025_04_29_09-20-35-507200.md&lt;/a&gt;'.</msg>
+<arg>${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md</arg>
+<arg>${OUTPUT}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.300997" elapsed="0.001974"/>
+</kw>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-04-29T09:21:31.309146" level="INFO">Running command 'cat /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report3-2025_04_29_09-20-35-507200.md | sed -E 's/[[0-9;]*[mK]//g' &gt; /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report3-2025_04_29_09-20-35-507200.md'.</msg>
+<arg>cat ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md | sed -E 's/\x1B\[[0-9;]*[mK]//g' &gt; ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report${REPORT_NUMBER}-${TIMESTAMP}.md</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.303179" elapsed="0.026820"/>
+</kw>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-04-29T09:21:31.333261" level="INFO">Running command 'mv /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report3-2025_04_29_09-20-35-507200.md /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report3-2025_04_29_09-20-35-507200.md 2&gt;&amp;1'.</msg>
+<arg>mv ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report${REPORT_NUMBER}-${TIMESTAMP}.md ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.330399" elapsed="0.012451"/>
+</kw>
+<kw name="Display Goose AI Logs" owner="generic-resources">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.343584" elapsed="0.000114"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.343739" elapsed="0.000042"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.343813" elapsed="0.000037"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.343881" elapsed="0.000113"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.344025" elapsed="0.000035"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.344088" elapsed="0.000038"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.344157" elapsed="0.000037"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-29T09:21:31.344274" level="INFO">starting session | provider: ollama model: qwen2.5:14b
+    logging to /Users/jgorospe/.local/share/goose/sessions/20250429_092037.jsonl
+    working directory: /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver
+[38;2;222;222;222mThe OWASP Top Ten Project provides a powerful awareness document for developers, managers, and technical decision-makers. Here's an overview of the current version (2017) along with advice on how to apply this knowledge in your work:[0m
+
+[1;38;2;222;222;222m###[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mOWASP Top 10 Overview[0m
+
+[1;38;2;222;222;222m####[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mA1: Injection[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mDescription[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Unvalidated input leading to unintended actions being performed by a system.[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mAction Plan[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Implement proper validation and sanitization of all inputs. Use prepared statements or parameterized queries.[0m
+
+[1;38;2;222;222;222m####[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mA2: Broken Authentication[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mDescription[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Weaknesses arise in the mechanisms for authenticating users, managing sessions, maintaining state across requests, and preventing abuse of this state information.[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mAction Plan[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Utilize proven libraries for password authentication that implement industry best practices such as multi-factor authentication (MFA).[0m
+
+[1;38;2;222;222;222m####[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mA3: Sensitive Data Exposure[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mDescription[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Inadequate protection of sensitive data like passwords or credit card numbers during transmission or storage.[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mAction Plan[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Use HTTPS and properly configure secure protocols, keys, and certificates. Encrypt sensitive information both at rest and in transit.[0m
+
+[1;38;2;222;222;222m####[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mA4: XML External Entities (XXE)[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mDescription[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Poor handling of untrusted XML inputs causing unauthorized access to internal resources or the execution of code on servers processing these inputs.[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mAction Plan[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Disable DTDs when parsing untrusted XML data and validate XML schemas strictly.[0m
+
+[1;38;2;222;222;222m####[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mA5: Broken Access Control[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mDescription[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Lack of enforcement for protecting against unauthorized access.[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mAction Plan[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Apply strict permission management principles and always design features considering least privilege rules.[0m
+
+[1;38;2;222;222;222m####[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mA6: Security Misconfiguration[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mDescription[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Failure to apply security best practices during application configuration or leaving the system in insecure, default configurations before deploying applications into production environments.[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mAction Plan[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Regularly audit your environment for misconfigurations and follow strict change management processes.[0m
+
+[1;38;2;222;222;222m####[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mA7: Cross-Site Scripting (XSS)[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mDescription[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Insertion of user-supplied data in web pages viewed by other users without proper validation, which may then run unauthorized code in their browsers.[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mAction Plan[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Use context-sensitive output encoding techniques to sanitize potentially malicious content before rendering it on the client side.[0m
+
+[1;38;2;222;222;222m####[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mA8: Insecure Deserialization[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mDescription[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Processing serialized objects from untrusted sources results in non-restricted object creation leading to command execution.[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mAction Plan[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Disable features that allow script invocation through deserialization mechanisms. Implement strict validation and input sanitization rules for incoming data.[0m
+
+[1;38;2;222;222;222m####[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mA9: Using Components with Known Vulnerabilities[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mDescription[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Utilizing outdated components prone to injection flaws, cross-site scripting issues, buffer overflows, or similar concerns.[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mAction Plan[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Keep your software stacks up-to-date; monitor trusted security advisories from vendors/developers.[0m
+
+[1;38;2;222;222;222m####[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mA10: Insufficient Logging [0m[1;38;2;222;222;222m&amp;[0m[1;38;2;222;222;222m Monitoring[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mDescription[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Failing to detect events that could signal the occurrence of a security breach in time due to insufficient logging or inadequate operational monitoring practices.[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mAction Plan[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Maintain comprehensive logging and error handling strategies with timely review capabilities. Ensure logs are secure from alteration/deletion attempts by unauthorized parties.[0m
+
+[1;38;2;222;222;222m###[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mApplying Knowledge Across Your Team[0m
+[38;2;222;222;222m1[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mEducate Team Members[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Organize training sessions for developers and operations staff. Share detailed documentation provided by OWASP.[0m
+[38;2;222;222;222m2[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mImplement Security Practices[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Enforce coding standards that align with the principles outlined in the Top Ten Guidelines across all projects.[0m
+[38;2;222;222;222m3[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mRegular Audits [0m[1;38;2;222;222;222m&amp;[0m[1;38;2;222;222;222m Reviews[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Conduct periodic code reviews and application assessments looking specifically at adherence to these best practices.[0m
+
+[1;38;2;222;222;222m###[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mAdditional Resources[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mOWASP Wiki[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Detailed articles on various topics within web app security are available here - [0m[4;38;2;64;128;160mhttps://owasp.org[0m[4;38;2;64;128;160m/www-project-top-ten/[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mNIST Cybersecurity Framework (CSF)[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Offers a comprehensive approach to managing organizational cybersecurity risks. Use its guidelines alongside OWASP for holistic protection strategies.[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mWeb Application Security Consortium (WASC)[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Provides research efforts into web application security issues and best practices - [0m[4;38;2;64;128;160mhttp://projects.webappsec.org[0m[4;38;2;64;128;160m/[0m
+
+[38;2;222;222;222mThis should give you a strong starting point in applying and disseminating knowledge about common vulnerabilities to your team while encouraging continuous learning and improvement.[0m
+</msg>
+<arg>${OUTPUT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.344229" elapsed="0.000214"/>
+</kw>
+<status status="PASS" start="2025-04-29T09:21:31.343263" elapsed="0.001203"/>
+</kw>
+<arg>GOOSE_AI_PROMPT='What is the OWASP top 10?/n How do I use that knowledge to help my team at my job?/n Where can I find more information on web application security other than OWASP?'</arg>
+<arg>INSTRUCTION_TYPE=User_Prompt</arg>
+<arg>REPORT_NUMBER=3</arg>
+<status status="PASS" start="2025-04-29T09:20:35.506937" elapsed="55.837551"/>
+</kw>
+<tag>Research</tag>
+<status status="PASS" start="2025-04-29T09:20:35.505884" elapsed="55.838710"/>
+</test>
+<test id="s1-t4" name="SEQUENTIAL RPA AI-AGENT5 TASKS : Run datadriven AI-Agent tasks with this data -&gt; prompt_message = multi-step-instructions3.md, local_agent_report_number  = 4" line="16">
+<kw name="Run Tasks From Local Goose AI Agent">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-29T09:21:31.345593" level="INFO">${TIMESTAMP} = 2025_04_29_09-21-31-345531</msg>
+<var>${TIMESTAMP}</var>
+<arg>result_format=%Y_%m_%d_%H-%M-%S-%f</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.345467" elapsed="0.000135"/>
+</kw>
+<kw name="Run Goose AI Based On Instruction Type" owner="generic-resources">
+<if>
+<branch type="IF" condition="&quot;${INSTRUCTION_TYPE}&quot; == &quot;User_Prompt&quot;">
+<kw name="Wait Until Local Goose Prompt Succeeds" owner="generic-resources">
+<arg>${GOOSE_AI_PROMPT}</arg>
+<status status="NOT RUN" start="2025-04-29T09:21:31.345911" elapsed="0.000011"/>
+</kw>
+<status status="NOT RUN" start="2025-04-29T09:21:31.345784" elapsed="0.000149"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${INSTRUCTION_TYPE}&quot; == &quot;Markdown_File&quot;">
+<kw name="Wait Until Local Goose Instruction File Succeeds" owner="generic-resources">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Run Local Goose Instruction File Succeeds" owner="generic-resources">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-29T09:21:33.346743" level="INFO">Slept 2 seconds.</msg>
+<arg>${DELAY} seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.346445" elapsed="2.000542"/>
+</kw>
+<kw name="Send Local Ai Agent Instruction File" owner="AIAgentLibrary">
+<msg time="2025-04-29T09:21:59.108564" level="INFO">${OUTPUT} = starting session | provider: ollama model: qwen2.5:14b
+    logging to /Users/jgorospe/.local/share/goose/sessions/20250429_092133.jsonl
+    working directory: /Users/jgorospe/Documents/GitHub/Robot-Fr...</msg>
+<var>${OUTPUT}</var>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<doc>Use the 'goose run' command to send complex instructions through a markdown file to a local Goose AI Agent running on a local machine that is also running Ollama.</doc>
+<status status="PASS" start="2025-04-29T09:21:33.347425" elapsed="25.761200"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>crates/goose/src/agents/truncate.rs</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.108794" elapsed="0.000160"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>goose::agents::truncate:</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.108994" elapsed="0.000058"/>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>Please retry if you think this is a transient or recoverable error.</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.109084" elapsed="0.000051"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>UNAVAILABLE</arg>
+<arg>ERROR</arg>
+<arg>Request failed</arg>
+<arg>400 Bad Request</arg>
+<arg>Server error</arg>
+<arg>Ran into this error</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.109168" elapsed="0.000064"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>I do not have the ability</arg>
+<arg>RPC</arg>
+<arg>GenerateContentRequest</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.109265" elapsed="0.000050"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>extension_name:</arg>
+<arg>uri:</arg>
+<arg>Tool not found</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.109348" elapsed="0.000053"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>platform</arg>
+<arg>search_available_extensions</arg>
+<arg>remember_memory</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.109432" elapsed="0.000049"/>
+</kw>
+<kw name="Should Not Contain Any" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<arg>。</arg>
+<arg>、</arg>
+<arg>大</arg>
+<arg>澳</arg>
+<arg>中</arg>
+<arg>一</arg>
+<arg>·</arg>
+<arg>文</arg>
+<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.109513" elapsed="0.000053"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-04-29T09:21:59.109710" level="INFO">${OUTPUT} = starting session | provider: ollama model: qwen2.5:14b
+    logging to /Users/jgorospe/.local/share/goose/sessions/20250429_092133.jsonl
+    working directory: /Users/jgorospe/Documents/GitHub/Robot-Fr...</msg>
+<arg>${OUTPUT}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.109616" elapsed="0.000108"/>
+</kw>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<status status="PASS" start="2025-04-29T09:21:31.346257" elapsed="27.763500"/>
+</kw>
+<arg>${RETRY} times</arg>
+<arg>0.25 seconds</arg>
+<arg>Run Local Goose Instruction File Succeeds</arg>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-04-29T09:21:31.346146" elapsed="27.763629"/>
+</kw>
+<arg>${EXECDIR}/agent-instructions/detailed-instructions/${GOOSE_AI_PROMPT}</arg>
+<timeout value="2 hours"/>
+<status status="PASS" start="2025-04-29T09:21:31.346003" elapsed="27.763792"/>
+</kw>
+<status status="PASS" start="2025-04-29T09:21:31.345943" elapsed="27.763872"/>
+</branch>
+<status status="PASS" start="2025-04-29T09:21:31.345771" elapsed="27.764063"/>
+</if>
+<arg>${GOOSE_AI_PROMPT}</arg>
+<arg>${INSTRUCTION_TYPE}</arg>
+<status status="PASS" start="2025-04-29T09:21:31.345680" elapsed="27.764173"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-04-29T09:21:59.110686" level="INFO" html="true">Created file '&lt;a href="file:///Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report4-2025_04_29_09-21-31-345531.md"&gt;/Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report4-2025_04_29_09-21-31-345531.md&lt;/a&gt;'.</msg>
+<arg>${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md</arg>
+<arg>${OUTPUT}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.109886" elapsed="0.000845"/>
+</kw>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-04-29T09:21:59.114420" level="INFO">Running command 'cat /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report4-2025_04_29_09-21-31-345531.md | sed -E 's/[[0-9;]*[mK]//g' &gt; /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report4-2025_04_29_09-21-31-345531.md'.</msg>
+<arg>cat ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md | sed -E 's/\x1B\[[0-9;]*[mK]//g' &gt; ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report${REPORT_NUMBER}-${TIMESTAMP}.md</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.110785" elapsed="0.021237"/>
+</kw>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2025-04-29T09:21:59.133681" level="INFO">Running command 'mv /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report4-2025_04_29_09-21-31-345531.md /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report4-2025_04_29_09-21-31-345531.md 2&gt;&amp;1'.</msg>
+<arg>mv ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/filtered-report${REPORT_NUMBER}-${TIMESTAMP}.md ${EXECDIR}/automation-resources/ai-agent-output-collector/ai-agent-output/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.132235" elapsed="0.007792"/>
+</kw>
+<kw name="Display Goose AI Logs" owner="generic-resources">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.140621" elapsed="0.000114"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.140785" elapsed="0.000058"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.140886" elapsed="0.000050"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${OUTPUT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.140975" elapsed="0.000110"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.141127" elapsed="0.000062"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.141235" elapsed="0.000057"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.141332" elapsed="0.000052"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-29T09:21:59.141487" level="INFO">starting session | provider: ollama model: qwen2.5:14b
+    logging to /Users/jgorospe/.local/share/goose/sessions/20250429_092133.jsonl
+    working directory: /Users/jgorospe/Documents/GitHub/Robot-Framework-AI-Agent-Datadriver
+[38;2;222;222;222mTo answer your questions accurately, I need to first identify the specific geographic area you're asking about. Based on historical and current weather data, one location known for extremely high temperatures is Death Valley, California, USA. It holds the record for being the hottest place on Earth with a recorded surface temperature of 56.7°C (134°F) in 1913.[0m
+
+[38;2;222;222;222mGiven this information:[0m
+
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mLocation:[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m Death Valley, CA, USA[0m
+
+[38;2;222;222;222mNow I'll proceed to answer each question one by one based on this location.[0m
+
+[1;38;2;222;222;222m###[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mWhat are 3 examples of animals that live in Death Valley?[0m
+[38;2;222;222;222mSome key species include:[0m
+[38;2;222;222;222m1[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m [0m[38;2;222;222;222mJoshua tree ant[0m
+[38;2;222;222;222m2[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m Desert tortoise[0m
+[38;2;222;222;222m3[0m[1;38;2;222;222;222m.[0m[38;2;222;222;222m Bighorn sheep[0m
+
+[1;38;2;222;222;222m###[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mAre those animals endangered?[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[38;2;222;222;222mThe Joshua tree ant is not considered a concern for extinction but its habitat, the Joshua tree forest itself, is threatened due to climate change.[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mDesert Tortoise[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m: Listed as Vulnerable by the International Union for Conservation of Nature (IUCN) primarily because of habitat loss, poaching, and disease.[0m
+[1;38;2;222;222;222m-[0m[38;2;222;222;222m [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mBighorn Sheep[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m in general have recovering populations after conservation efforts but some subspecies like those in southern California including Death Valley National Park are still listed under endangered statuses due to a range of threats.[0m
+
+[1;38;2;222;222;222m###[0m[1;38;2;222;222;222m [0m[1;38;2;222;222;222mWhat is the nearest river to that location?[0m
+[38;2;222;222;222mThe nearest major water body to Death Valley would be the [0m[1;38;2;222;222;222m**[0m[1;38;2;222;222;222mAmargosa River[0m[1;38;2;222;222;222m**[0m[38;2;222;222;222m, which does not meet the definition of a “river” often, as it is usually flowing underground. It can sometimes appear above ground within certain portions of its basin and near Beatty in Death Valley Park, NV.[0m
+
+[38;2;222;222;222mLet me know if you need more clarification or further detail![0m
+</msg>
+<arg>${OUTPUT}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-29T09:21:59.141428" elapsed="0.000124"/>
+</kw>
+<status status="PASS" start="2025-04-29T09:21:59.140355" elapsed="0.001223"/>
+</kw>
+<arg>GOOSE_AI_PROMPT=multi-step-instructions3.md</arg>
+<arg>INSTRUCTION_TYPE=Markdown_File</arg>
+<arg>REPORT_NUMBER=4</arg>
+<status status="PASS" start="2025-04-29T09:21:31.345354" elapsed="27.796245"/>
+</kw>
+<tag>Research</tag>
+<status status="PASS" start="2025-04-29T09:21:31.344721" elapsed="27.796981"/>
+</test>
+<status status="PASS" start="2025-04-29T09:18:27.435545" elapsed="211.706389"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Questions</stat>
+<stat pass="2" fail="0" skip="0">Research</stat>
+</tag>
+<suite>
+<stat name="Robotframework-Sequential-Tasks-Local-Ai-Agent" id="s1" pass="4" fail="0" skip="0">Robotframework-Sequential-Tasks-Local-Ai-Agent</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
