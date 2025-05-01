@@ -30,6 +30,8 @@ Years ago, I created another AI project called [robotframework-test-assistant](h
 - An AI agent assistant that can audit any given source code repo for vulnerabilities.
     - For now, this partially works only in the [Docker AI agent examples.](https://github.com/jg8481/Robot-Framework-AI-Agent-Datadriver/blob/main/agent-instructions/docker-agent1-distributed-instructions.csv) I am working on a version that will use Ollama.
 - An AI agent assistant that will utilize relevant and secure MCP Servers from the [4,000+ projects in the Model Context Protocol (MCP) ecosystem](https://www.pulsemcp.com/servers).
+- Parallel running Docker AI agents running MCP tools using Anthropic, OpenAI, Groq, etc. at the same time.
+    - Basically multiple different cloud AI APIs running different MCP workflows simultaneously on the same hardware.
 - I have more ideas that I will be working on in the future.
 
 ### Technical Requirements
@@ -51,11 +53,13 @@ The following are the basic technical requirements needed to run the AI agent RP
 
 This is a fully functional RPA toolkit you can start using and customizing for your needs today. I recommend looking at all of the example report Markdown files stored in the `automation-resources/ai-agent-output-collector/ai-agent-output` folder to get an idea of what is currently possible with the AI agent RPA automation being maintained in this project. More documentation will be coming soon, along with a series of related Robot Framework [Medium.com](https://medium.com/@joshua.gorospe) articles I plan to write.
 
-**Before running any of the automation, first make sure that all of the basic technical requirements are installed and working**, then you can run `bash ./start-ai-agent-workflow-experiments.sh Run-Datadriven-Sequential-Local-AI-Tasks ResearchORQuestions` to experiment with a basic workflow.
+**Before running any of the automation, first make sure that all of the basic technical requirements are installed and working**, then you can run `bash ./start-ai-agent-workflow-experiments.sh Run-Datadriven-Sequential-Local-AI-Tasks ResearchORQuestions` to experiment with a basic workflow. To see more workflow options run `bash ./start-ai-agent-workflow-experiments.sh -h` in your terminal.
 
 ***
 
-## Big thank you to the following people and groups. Without their open source contributions, this RPA project would not exist.
+## Thank You!
+
+Big thank you to the following people and groups. Without their open source contributions, this RPA project would not exist.
 
 - Pekka Klarck
 - Mikko Korpela
