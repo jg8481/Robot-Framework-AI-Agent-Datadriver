@@ -79,6 +79,12 @@ Run Goose AI Based On Instruction Type
         Wait Until Local Goose Instruction File Succeeds    ${EXECDIR}/agent-instructions/detailed-instructions/${GOOSE_AI_PROMPT}
     END
 
+Create Local Agent Report
+    [Arguments]    ${REPORT_NUMBER}
+    Create File    ${EXECDIR}/${AI_AGENT_OUTPUT_FOLDER}/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md    ${OUTPUT}
+    Run    cat ${EXECDIR}/${AI_AGENT_OUTPUT_FOLDER}/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md | sed -E 's/\x1B\[[0-9;]*[mK]//g' > ${EXECDIR}/${AI_AGENT_OUTPUT_FOLDER}/filtered-report${REPORT_NUMBER}-${TIMESTAMP}.md
+    Run    mv ${EXECDIR}/${AI_AGENT_OUTPUT_FOLDER}/filtered-report${REPORT_NUMBER}-${TIMESTAMP}.md ${EXECDIR}/${AI_AGENT_OUTPUT_FOLDER}/local-agent-report${REPORT_NUMBER}-${TIMESTAMP}.md
+
 Display Goose AI Logs
     Log to Console    ...
     Log to Console    ...

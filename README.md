@@ -51,7 +51,7 @@ The following are the basic technical requirements needed to run the AI agent RP
 
 ## Quick Start Guide
 
-This is a fully functional RPA toolkit you can start using and customizing for your needs today. I recommend looking at all of the example report Markdown files stored in the `automation-resources/ai-agent-output-collector/ai-agent-output` folder to get an idea of what is currently possible with the AI agent RPA automation being maintained in this project. More documentation will be coming soon, along with a series of related Robot Framework [Medium.com](https://medium.com/@joshua.gorospe) articles I plan to write.
+This is a fully functional RPA toolkit you can start using and customizing for your needs today. I recommend looking at all of the example report Markdown files stored in the `automation-resources/ai-agent-output-collector/ai-agent-output` [folder](https://github.com/jg8481/Robot-Framework-AI-Agent-Datadriver/tree/main/automation-resources/ai-agent-output-collector/ai-agent-output) to get an idea of what is currently possible with the AI agent RPA automation being maintained in this project. More documentation will be coming soon, along with a series of related Robot Framework [Medium.com](https://medium.com/@joshua.gorospe) articles I plan to write.
 
 **Before running any of the automation, first make sure that all of the basic technical requirements are installed and working**, then you can run `bash ./start-ai-agent-workflow-experiments.sh Run-Datadriven-Sequential-Local-AI-Tasks ResearchORQuestions` to experiment with a basic workflow. To see more workflow options run `bash ./start-ai-agent-workflow-experiments.sh -h` in your terminal.
 
@@ -64,5 +64,6 @@ Big thank you to the following people and groups. Without their open source cont
 - Pekka Klarck
 - Mikko Korpela
 - René Rohner
+- Docker developers
 - Ollama developers
 - Codename Goose developers
