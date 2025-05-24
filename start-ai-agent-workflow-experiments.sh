@@ -3,6 +3,14 @@
 TIMESTAMP=$(date)
 
 ai_agent_setup() {
+  pkill goose > /dev/null 2>&1
+  sleep 3s
+  killall goose > /dev/null 2>&1
+  sleep 3s
+  pkill ollama > /dev/null 2>&1
+  sleep 3s
+  killall ollama > /dev/null 2>&1
+  sleep 3s
   clear
   toolkit_root=$(pwd)
   cd "$toolkit_root"
