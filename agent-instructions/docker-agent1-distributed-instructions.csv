@@ -3,4 +3,4 @@ docker-goose-cli-1,Read all of the documents in /root/workspace/ai-agent-input/d
 docker-goose-cli-1,Read all of the documents in /root/workspace/ai-agent-input/data-files/owasp-mastg/Document and store key information in the knowledge graph. Use it for reference anytime I ask you about security,2,Experimental
 docker-goose-cli-1,I need you to perform a security audit and implement fixes in the /root/workspace/ai-agent-input/data-files/saas-starter project,3,Analysis
 docker-goose-cli-1,Go to https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Forgot_Password_Cheat_Sheet.md,3,Ignore
-docker-goose-cli-1,Analye the work of Agent2 for clarity and halucinations by reading the agent2-report Markdown files in the /root/workspace/ai-agent-output folder,4,Evaluation
+docker-goose-cli-1,Analyze the work of Agent2 for clarity and halucinations by reading the agent2-report Markdown files in the /root/workspace/ai-agent-output folder,4,Evaluation

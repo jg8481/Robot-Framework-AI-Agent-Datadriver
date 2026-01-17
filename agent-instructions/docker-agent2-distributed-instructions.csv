@@ -2,4 +2,4 @@ ${DOCKER_CONTAINER_NAME},${GOOSE_AI_PROMPT},${REPORT_NUMBER},[Tags]
 docker-goose-cli-2,Read through and run the instructions the multi-step-instructions1.md found in the /root/workspace/ai-agent-input/detailed-instructions folder,1,Research
 docker-goose-cli-2,Read through and run the instructions the multi-step-instructions2.md found in the /root/workspace/ai-agent-input/detailed-instructions folder,2,Research
 docker-goose-cli-2,Are you capable of giving international travel and cultural information? Please tell me the countries and cultures you know about,3,Questions
-docker-goose-cli-2,Analye the work of Agent1 for clarity and halucinations by reading the agent1-report Markdown files in the /root/workspace/ai-agent-output folder,4,Evaluation
+docker-goose-cli-2,Analyze the work of Agent1 for clarity and halucinations by reading the agent1-report Markdown files in the /root/workspace/ai-agent-output folder,4,Evaluation
