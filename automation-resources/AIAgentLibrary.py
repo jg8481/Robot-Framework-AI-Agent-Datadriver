@@ -28,9 +28,8 @@ class AIAgentLibrary:
 
     def send_local_ai_agent_prompt_message(self, goose_ai_prompt):
         """
-        Use the 'goose run' command to send a prompt message to a local Goose AI Agent running on a local machine that is also running Ollama. Also measures CLI runtime.
+        Use the 'goose run' command to send a prompt message to a local Goose AI Agent running on a local machine that is also running Ollama.
         """
-        # ollama_runner = f'time echo "{goose_ai_prompt} and provide an answer in less than {llm_time_constraint} seconds." | goose run -i -'
         ollama_runner = f'echo "{goose_ai_prompt}" | goose run -i - && sleep 2'
         process = subprocess.Popen(ollama_runner, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         stdout, stderr = process.communicate()
