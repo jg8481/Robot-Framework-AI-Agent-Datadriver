@@ -23,22 +23,24 @@ ai_agent_setup() {
   ollama --version > ./automation-resources/ai-agent-output-collector/ollama-output.log 
   echo >> ./automation-resources/ai-agent-output-collector/ollama-output.log 
   ollama list >> ./automation-resources/ai-agent-output-collector/ollama-output.log 
-  echo >> ./automation-resources/ai-agent-output-collector/ollama-output.log 
-  ollama show qwen2.5:latest >> ./automation-resources/ai-agent-output-collector/ollama-output.log 
-  if grep -q "$required_string" ./automation-resources/ai-agent-output-collector/ollama-output.log; then
+  if grep -q "NAME" ./automation-resources/ai-agent-output-collector/ollama-output.log; then
     echo
     echo
-    echo "Ollama has been installed properly. This ai_agent_setup will continue"
+    echo "This ai_agent_setup will continue"
     echo
     echo
   else
     echo
     echo
-    echo "[ERROR] Ollama has not been installed properly."
-    echo "Please read the documentation found here to fix it ---> https://block.github.io/goose/docs/getting-started/providers#local-llms-ollama"
+    echo "[WARNING] Ollama has not been installed properly, or you are not connected to the Internet. If an offline run this was intentional, then this will continue."
+    echo
+    echo "Please read the documentation found here to fix Codename Goose and Ollama issues ---> https://block.github.io/goose/docs/getting-started/providers#local-llms-ollama"
+    echo
+    echo "FYI, hundreds of models exist. The suggested models used with this toolkit are mistral or qwen3 for now, but this will definitely change over time as better models get released."
+    echo
+    echo "Please read this for more information ---> https://en.wikipedia.org/wiki/List_of_large_language_models"
     echo
     echo
-    exit 1
   fi
   AGENT_OUTPUT="ai-agent-output"
   AGENT_INPUT="ai-agent-input"
@@ -421,16 +423,16 @@ error_handler() {
 
 argument="$1"
 if [[ -z $argument ]] ; then
-  error_handler Please enter a valid tool runner option. The usage instructions below contains various options for setting up Docker and running the Gooose AI agents.
+  error_handler Please enter a valid tool runner option. The usage instructions below contains various options for setting up Docker and running the Goose AI agents.
   usage_explanation
 else
   case $argument in
     -h|--help)
-      error_handler Here is a help menu and usage instructions. The following contains various options for setting up Docker and running the Gooose AI agents.
+      error_handler Here is a help menu and usage instructions. The following contains various options for setting up Docker and running the Goose AI agents.
       usage_explanation
       ;;
     *)
-      error_handler Here is a help menu and usage instructions. The following contains various options for setting up Docker and running the Gooose AI agents.
+      error_handler Here is a help menu and usage instructions. The following contains various options for setting up Docker and running the Goose AI agents.
       usage_explanation
       ;;
   esac

@@ -14,7 +14,7 @@ ${AI_AGENT_OUTPUT_FOLDER}    automation-resources/ai-agent-output-collector/ai-a
 
 *** Tasks ***
 
-SEQUENTIAL RPA AI-AGENT TASKS : Run datadriven AI-Agent tasks with this data -> prompt_message = ${GOOSE_AI_PROMPT}, local_agent_report_number  = ${REPORT_NUMBER}
+SEQUENTIAL RPA AI-AGENT TASKS : Run datadriven AI-Agent tasks with this data -> prompt_message = ${GOOSE_AI_PROMPT}, local_agent_report_number = ${REPORT_NUMBER}
 
 *** Keywords ***
 

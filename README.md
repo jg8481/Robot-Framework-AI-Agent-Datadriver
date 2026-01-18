@@ -47,7 +47,9 @@ The following are the basic technical requirements needed to run the AI agent RP
 - **Ollama**, a framework for building and running language models on local machines.
     - macOS, Windows, and Linux users can learn how to install it properly here -> https://ollama.com/download
     - macOS users can follow this guide to install it using Homebrew -> https://formulae.brew.sh/formula/ollama
-    - After finishing the installation, run this command from your terminal -> `ollama run qwen2.5`
+    - After finishing the installation, you can run either of the following commands from your terminal. There are hundreds of models and I recommend you research them for your own use cases. Change the provided `config.yaml` file to match the model you installed. I will be experimenting with a lot of models in the future so the provided `config.yaml` file will change over time. 
+        - `ollama run mistral`
+        - `ollama run qwen3`
 
 ## Quick Start Guide
 

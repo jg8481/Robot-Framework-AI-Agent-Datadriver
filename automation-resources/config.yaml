@@ -2,7 +2,7 @@ GOOSE_CLI_MIN_PRIORITY: 0.8
 OLLAMA_HOST: localhost
 GOOSE_PROVIDER: ollama
 GOOSE_MODE: auto
-GOOSE_MODEL: qwen2.5
+GOOSE_MODEL: mistral
 extensions:
   computercontroller:
     bundled: true
@@ -25,3 +25,4 @@ extensions:
     name: memory
     timeout: 30
     type: builtin
+
