@@ -395,7 +395,7 @@ usage_explanation() {
   echo "bash ./start-ai-agent-workflow-experiments.sh Get-Files-For-RAG-Analysis"
   echo "bash ./start-ai-agent-workflow-experiments.sh Stop-All-Docker-Containers"
   echo "bash ./start-ai-agent-workflow-experiments.sh Start-One-Docker-Container"
-  echo "bash ./start-ai-agent-workflow-experiments.sh Start-Multiple-Docker-Containers <NUMBER _OF_CONTAINERS>"
+  echo "bash ./start-ai-agent-workflow-experiments.sh Start-Multiple-Docker-Containers <NUMBER_OF_CONTAINERS>"
   echo "bash ./start-ai-agent-workflow-experiments.sh Run-One-Container-And-AI-Task <PROMPT_TEXT>"
   echo "bash ./start-ai-agent-workflow-experiments.sh Run-Specific-Containers-And-AI-Tasks <DOCKER_CONTAINER_NAME> <PROMPT_TEXT>"
   echo "bash ./start-ai-agent-workflow-experiments.sh Run-Specific-Local-Goose-AI-Tasks <PROMPT_TEXT>"
