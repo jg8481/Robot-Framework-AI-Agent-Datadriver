@@ -64,7 +64,7 @@ create_multiple_docker_containers() {
   echo "This workflow requires Docker Desktop to be installed properly first ---> https://docs.docker.com/"
   echo
   echo
-  echo "Starting $CONTAINER_AMOUNT instances of the Goose AI agnet containers 'goose-cli' service..."
+  echo "Starting $CONTAINER_AMOUNT instances of the Goose AI agent containers 'goose-cli' service..."
   cd ./goose-main
   docker compose -f ./documentation/docs/docker/docker-compose.yml build 
   docker compose -f ./documentation/docs/docker/docker-compose.yml scale goose-cli="$CONTAINER_AMOUNT"
